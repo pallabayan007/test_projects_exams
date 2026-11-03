@@ -41,4 +41,4 @@ pytest -q
 
 Replace local JSON repositories with authorised policy/claims APIs and a claim-filtered retrieval service. Add Entra/workload identity, private connectivity, malware scanning, DLP, durable audit storage, SIEM integration, rate limits, secrets management, model evaluation, red-team tests, and formal insurance/legal approval.
 # test_projects_exams
-# test_projects_exams
+
