@@ -34,11 +34,14 @@ curl -X POST http://localhost:8000/v1/claims/triage \
 Run tests:
 
 ```bash
-pytest -q
+python -m pytest -q
 ```
+
+## Console logs
+
+The app writes orchestration progress and audit events to the console. Logs show when triage starts, specialist agents run and complete, deterministic rules are evaluated, a model or deterministic fallback is used, and the final recommendation is produced. Set `LOG_LEVEL` in `.env` to control verbosity.
 
 ## Production hardening still required
 
 Replace local JSON repositories with authorised policy/claims APIs and a claim-filtered retrieval service. Add Entra/workload identity, private connectivity, malware scanning, DLP, durable audit storage, SIEM integration, rate limits, secrets management, model evaluation, red-team tests, and formal insurance/legal approval.
 # test_projects_exams
-
