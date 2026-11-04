@@ -16,7 +16,7 @@ Reference implementation for an insurance claims triage agent. It uses the OpenA
 
 ```bash
 cp .env.example .env
-# Set OPENAI_API_KEY in .env
+# Set API_USERNAME and API_PASSWORD in .env; set OPENAI_API_KEY to enable model recommendations
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
@@ -27,9 +27,12 @@ Submit the supplied example:
 
 ```bash
 curl -X POST http://localhost:8000/v1/claims/triage \
+  -u 'your-username:your-password' \
   -H 'Content-Type: application/json' \
   --data @app/data/example_request.json
 ```
+
+The `/v1/claims/triage` endpoint requires HTTP Basic authentication using `API_USERNAME` and `API_PASSWORD`. The `/health` endpoint remains unauthenticated. Use HTTPS outside localhost because Basic credentials are encoded, not encrypted.
 
 Run tests:
 

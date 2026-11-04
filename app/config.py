@@ -12,6 +12,8 @@ PLACEHOLDER_OPENAI_KEYS = {
 class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_model: str = "gpt-5.5"
+    api_username: str = ""
+    api_password: str = ""
     app_env: str = "dev"
     max_agent_steps: int = 8
     max_claim_amount_automation: float = 10_000
