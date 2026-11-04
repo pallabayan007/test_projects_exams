@@ -34,6 +34,19 @@ curl -X POST http://localhost:8000/v1/claims/triage \
 
 The `/v1/claims/triage` endpoint requires HTTP Basic authentication using `API_USERNAME` and `API_PASSWORD`. The `/health` endpoint remains unauthenticated. Use HTTPS outside localhost because Basic credentials are encoded, not encrypted.
 
+## React UI
+
+The React claim assessment form is in `frontend/`. It submits to the authenticated triage endpoint and keeps the Basic-auth credentials in memory only.
+
+```bash
+cd frontend
+cp .env.example .env.local
+npm install
+npm run dev
+```
+
+Open the Vite URL (normally `http://localhost:5173`). Start the Python API separately as described above. For a different frontend origin, update the API's `allow_origins` in `app/main.py`.
+
 Run tests:
 
 ```bash

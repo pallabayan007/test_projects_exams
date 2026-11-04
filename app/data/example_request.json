@@ -1,11 +1,13 @@
 {
-  "claim_id": "CLM-001",
-  "policy_id": "POL-001",
-  "loss_type": "escape_of_water",
-  "loss_date": "2026-10-14",
-  "claim_amount": 6850,
-  "customer_statement": "A pipe burst suddenly beneath the kitchen sink and damaged the flooring.",
-  "documents": [
-    {"document_id":"DOC-1","document_type":"repair_estimate","text":"Repair estimate total: GBP 6,850."}
-  ]
+    "claim_id": "CLM-001",
+    "policy_id": "POL-001",
+    "loss_type": "escape_of_water",
+    "loss_date": "2026-10-14",
+    "claim_amount": 6850,
+    "customer_statement": "A pipe burst suddenly beneath the kitchen sink and damaged the flooring.",
+    "documents": [{
+        "document_id": "DOC-1",
+        "document_type": "repair_estimate",
+        "text": "Repair estimate total: GBP 6,850."
+    }]
 }

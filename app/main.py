@@ -3,6 +3,7 @@ import hmac
 from typing import Optional
 
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from app.config import settings
 from app.models import ClaimRequest, TriageDecision
@@ -14,6 +15,12 @@ logging.basicConfig(
 )
 
 app=FastAPI(title="Agentic Claims Triage",version="0.1.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
+)
 basic_auth = HTTPBasic(auto_error=False)
 
 @app.get("/health")
